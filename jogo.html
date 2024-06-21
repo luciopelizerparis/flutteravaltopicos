@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width,
+        initial-scale=1.0">
+    <title>Flappy Bird do Creuzebequi</title>
+    <canvas id="cnv" width = "800" height = "600" 
+        style = "border: 2px solid green"></canvas>
+</head>
+<body onload="inicio()" >
+    <script>
+        var refCanvas = document.getElementById("cnv");
+        var ctx = refCanvas.getContext("2d");
+        var passaro = new Image();
+        var gravidade;
+        var posicPassaro = {
+            x: 30,
+            y: refCanvas.height / 2 
+        };
+        var troncoA = new Image();
+        var troncoB = new Image();
+        var fundo = new Image();
+        var posicTroncoA = {
+            x: refCanvas.width + 100,
+            y: -10
+        };
+        var posicTroncoB = {
+            x: posicTroncoA.x,
+            y: 250
+        };
+        
+        function inicio()
+        {
+            gravidade = 0;
+            passaro.src = "img/passaro.png";
+            setInterval("desenhar()", 200);
+        }
+        function desenhar()
+        { // inicio da função desenhar
+            gravidade++;
+            ctx.clearRect(0, 0, 800, 600);
+            ctx.beginPath();
+            ctx.drawImage( passaro, 20, gravidade, 60, 80 );
+            ctx.closePath();
+        } // fim da função desenhar
+
+        function movimento()
+        { // inicio da função movimento()
+
+
+
+        } // fim da função movimento()
+        
+    </script>
+</body>
+</html>
